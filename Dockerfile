@@ -4,4 +4,4 @@ RUN apt-get install git -y && apt-get install default-jdk -y && apt-get install 
 EXPOSE 8080
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 RUN cd boxfuse-sample-java-war-hello/ && mvn package
-COPY hello-1.0.war /
+RUN cp /boxfuse-sample-java-war-hello/target/hello-1.0.war /var/lib/tomcat8/webapps/
